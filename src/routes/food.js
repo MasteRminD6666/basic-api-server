@@ -5,11 +5,11 @@ const { food } = require('../models/food');
 
 const foodRouter = express.Router();
 
-foodRouter.get('/food', getfood); 
-foodRouter.get('/food/:id', getOneFood); 
-foodRouter.post('/food', createFood); 
-foodRouter.put('/food/:id', updateFood); 
-foodRouter.delete('/food/:id', deleteFood); 
+foodRouter.get('/api/food', getfood); 
+foodRouter.get('/api/food/:id', getOneFood); 
+foodRouter.post('/api/food', createFood); 
+foodRouter.put('/api/food/:id', updateFood); 
+foodRouter.delete('/api/food/:id', deleteFood); 
 
 
 async function getfood(req,res) {

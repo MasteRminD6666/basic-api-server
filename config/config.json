@@ -1,23 +1,22 @@
-
 {
   "development": {
     "username": "mastermind",
-    "password": "root",
-    "database": "food",
+    "password": "password",
+    "database": "shop",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
     "username": "username",
     "password": "password",
-    "database": "food",
+    "database": "shop",
     "host": "127.0.0.1",
     "dialect": "sqlite:memory:"
   },
   "production": {
-    "username": "username",
+    "username": "mohammadharoun",
     "password": "password",
-    "database": "food",
+    "database": "shop",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
