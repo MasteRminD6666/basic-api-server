@@ -1,19 +1,78 @@
 'use strict';
+const server=require('../src/server.js');
+const supertest=require('supertest');
+
+const { db } = require('../src/models/index');
+
+const request=supertest(server.app);
+jest.setTimeout(8000)
+// before any of the test create a connection
+beforeAll(async () => {
+  await db.sync();
+});
+
+// after all the tests are done
+afterAll(async () => {
+  await db.drop();
+});
 
 
-const { app } = require('../src/server');
-const supertest = require('supertest');
-const request = supertest(app);
+describe('Web server', () => {
 
-describe('my  testing unit',() => {
-  it('is there a Home route :✈️😍', async() => {
-    const response  = await request.get('/')
-    expect(response.status).toEqual(200)
-  })
+  let id;
 
-  it('is there a 404  hadling  :😕', async() => {
-    const response  = await request.get('/invaildURL')
-    expect(response.status).toEqual(404)
-  })
+  //-------------------------------------------post method for food..........................
+it('Post method', async () => {
+  const Obj = {
+    name: 'test',
+    type: 'test'
+  };
+  const response = await request.post('/clothes').send(Obj);
+  
+ 
+  expect(response.status).toEqual(201);
+  expect(  response.body.favariteFood1).toBe(Obj.favariteFood1);
+  expect(response.body.favariteFood2).toBe(Obj.favariteFood2);
+});
+
+//--------------------------------------------------put method-----------------
+
+it('put methd ', async() =>{
+
+const Obj = {
+      favariteFood1: 'jbneh',
+      favariteFood2: 'saniorah'
+    };
+    const response = await request.put(`/food/1`).send(Obj);
+    expect(response.status).toEqual(201);
+   
+
 
 })
+//-------------------------------------------get method----------------------------------
+it('get method to all',async()=>{
+
+const response= await request.get('/food')
+expect(  response.status).toEqual(200)
+expect(typeof response.body).toEqual('object')
+
+
+})
+//------------------------------------------get  specific item----------------------------------
+it('get method to specific record ',async()=>{
+const response= await request.get('/food/1')
+expect(  response.status).toEqual(200)
+expect(typeof response.body).toEqual('object')
+
+})
+//-----------------------------------------delete record-----------------------------------------------------
+it('get method to delete record ',async()=>{
+
+const response= await request.delete('/food/5')
+expect(  response.status).toEqual(204)
+
+
+})
+
+
+});

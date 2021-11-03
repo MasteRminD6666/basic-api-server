@@ -1,47 +1,49 @@
 'use strict';
 const express = require('express');
 
-const { food } = require('../models/food');
+const { Food } = require('../models/index');
 
 const foodRouter = express.Router();
 
-foodRouter.get('food', getfood); 
-foodRouter.get('/api/food/:id', getOneFood); 
-foodRouter.post('/api/food', createFood); 
-foodRouter.put('/api/food/:id', updateFood); 
-foodRouter.delete('/api/food/:id', deleteFood); 
+foodRouter.get('/food', getFood);
+foodRouter.get('/food/:id', getOneFood);
+foodRouter.post('/food', createFood);
+foodRouter.put('/food/:id', updateFood);
+foodRouter.delete('/food/:id', deleteFood);
 
 
-async function getfood(req,res) {
-    await food.findAll();
-    res.status(200).json(allfood);
+async function getFood(req, res) {
+    const allFood = await Food.findAll();
+    res.status(200).json(allFood);
+    console.log('test workedn');
+    console.log(allFood);
 }
-async function getOneFood(req,res) {
+async function getOneFood(req, res) {
     const id = parseInt(req.params.id);
-    const oneFood = await food.findOne({
+    const onefood = await Food.findOne({
         where: {
-            id:id
+            id: id
         }
     });
-    res.status(200).json(oneFood);
-    
+    res.status(200).json(onefood);
+
 }
-async function createFood(req,res) {
+async function createFood(req, res) {
     const obj = req.body;
-  let food = await food.create(obj);
-  res.status(201).json(food);
+    let food = await Food.create(obj);
+    res.status(201).json(food);
 }
-async function updateFood(req,res) {
+async function updateFood(req, res) {
     const id = parseInt(req.params.id);
     const obj = req.body;
-    let foundFood = await food.findOne({ where: { id: id } });
-    const updatedFood = await foundFood.update(obj);
-    res.status(201).json(updatedFood);
+    let foundfood = await Food.findOne({ where: { id: id } });
+    const updatedfood = await foundfood.update(obj);
+    res.status(201).json(updatedfood);
 }
-async function deleteFood(req,res) {
+async function deleteFood(req, res) {
     const id = parseInt(req.params.id);
-    const deleteFood = await food.destroy({where:{id:id}});
-    res.status(204).json(deleteFood);
+    const deletefood = await Food.destroy({ where: { id: id } });
+    res.status(204).json(deletefood);
 }
 
 module.exports = foodRouter;

@@ -5,13 +5,7 @@ const food = (sequelize,DataTypes) => sequelize.define('food',{
         type: DataTypes.STRING,
         allowNull: false
     },
-    location:{
-        type: DataTypes.STRING,
-    },
-    foodType: {
-        type: DataTypes.STRING,
-    },
-  
-})
+   
 
-module.exports = food 
+})
+module.exports = food
