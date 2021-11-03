@@ -7,14 +7,14 @@
     "dialect": "postgres"
   },
   "test": {
-    "username": "username",
+    "username": "mastermind",
     "password": "password",
     "database": "shop",
     "host": "127.0.0.1",
     "dialect": "sqlite:memory:"
   },
   "production": {
-    "username": "mohammadharoun",
+    "username": "mastermind",
     "password": "password",
     "database": "shop",
     "host": "127.0.0.1",
