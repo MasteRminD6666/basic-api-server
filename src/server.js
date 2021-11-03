@@ -29,7 +29,7 @@ app.use(logger);
 app.use('*', notFound)
 app.use(errorHandler);
 function start() {
-  app.set('port', (process.env.PORT || 3000));
+  app.set('port', (process.env.PORT || 3030));
 
   // Start node server
   app.listen(app.get('port'), function () {
