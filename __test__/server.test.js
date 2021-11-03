@@ -36,13 +36,13 @@ it('Post method', async () => {
 
 
 
-xit('put methd ', async() =>{
+it('put methd ', async() =>{
 
 const Obj = {
       name: 'test'
    
     };
-    const response = await request.put(`/food/1`).send(Obj);
+    const response = await request.put(`/clothes/1`).send(Obj);
     expect(response.status).toEqual(201);
 
 
