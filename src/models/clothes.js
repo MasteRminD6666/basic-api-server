@@ -5,7 +5,7 @@ const clothes = (sequelize,DataTypes) => sequelize.define('clothes',{
         type: DataTypes.STRING,
         allowNull: false
     },
-    Type: {
+    type: {
         type: DataTypes.STRING,
     },
 

@@ -5,7 +5,7 @@ const { food } = require('../models/food');
 
 const foodRouter = express.Router();
 
-foodRouter.get('/api/food', getfood); 
+foodRouter.get('food', getfood); 
 foodRouter.get('/api/food/:id', getOneFood); 
 foodRouter.post('/api/food', createFood); 
 foodRouter.put('/api/food/:id', updateFood); 
