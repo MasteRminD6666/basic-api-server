@@ -25,8 +25,10 @@ let sequelizeOptions = process.env.NODE_ENV === 'production' ? {
 let sequelize = new Sequelize(POSTGRES_URI, sequelizeOptions);
 
 const food = require('../models/food');
+const clothes = require('../models/clothes');
 
 module.exports = {
   db: sequelize,
-  Food: food(sequelize, DataTypes) // this step is used to create a new table
+  Food: food(sequelize, DataTypes), // this step is used to create a new table
+  Clothes: clothes(sequelize, DataTypes)
 };
