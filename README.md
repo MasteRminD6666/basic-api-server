@@ -1,12 +1,28 @@
+## Autthor: RAmi Zaitoun 
 
-# Basic api server 
+![](https://raw.githubusercontent.com/MasteRminD6666/basic-express-server/main/asserts/UML.PNG)
 
-![](https://github.com/MasteRminD6666/basic-api-server/blob/main/crud.jpg?raw=true)
-Fizoo99 
+ Here is the deployment refernce [Heroku](https://github.com/marketplace/actions/deploy-to-heroku#getting-started)
+ 
+ ---
+ 
+## PR-Link: [Here](https://github.com/MasteRminD6666/basic-api-server/pull/2)
+## Heroku-Link: [Here](https://rami-api-server.herokuapp.com)
+## Heroku-query-paths: [path/food](https://rami-api-server.herokuapp.com/food)
+## Heroku-paths: [path/clothes](https://rami-api-server.herokuapp.com/clothes)
 
------
-# Error in connection 
-
-## Stcuk more than 5 Hours trying solve that problem still not solved 😢
-
-![](https://github.com/MasteRminD6666/basic-api-server/blob/main/error%20with%20connceting.PNG?raw=true)
+## Testing Works 
+ ![](https://github.com/MasteRminD6666/basic-api-server/blob/main/images/testing.PNG?raw=true)
+ 
+ 
+ 
+ 
+ 
+ 
+ ## Faced this error 
+ ![](https://github.com/MasteRminD6666/basic-api-server/blob/main/images/error%20with%20connceting.PNG?raw=true)
+ ### this error took 5 hours to kill it plan Z used :D 
+~~~
+Unit test Using Jest Framework
+~~~
+> **_NOTE:_**  Add a Procfile for  Heroku
